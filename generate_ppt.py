@@ -45,7 +45,7 @@ def create_presentation(json_file='slides.json', output_file_base='nano_banana_p
         print("Skipping image generation due to missing API key.")
 
     try:
-        with open(json_file, 'r') as f:
+        with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
             # Handle both formats: direct array or object with 'slides' key
             if isinstance(data, dict) and 'slides' in data:
